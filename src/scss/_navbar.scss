@@ -1,0 +1,51 @@
+.navbar {
+  position: relative;
+  position: sticky;
+  top: 0;
+
+  .products-collapse {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+  }
+
+  .products-collapse-btn {
+    position: relative;
+
+    .arrow-down,
+    .arrow-up {
+      position: absolute;
+      top: calc(50% - 0.5em);
+      left: 2ch;
+
+      transition: opacity 0.3s ease-in-out;
+
+      @include media-breakpoint-down(md) {
+        display: none;
+      }
+    }
+    .arrow-down {
+      opacity: 0;
+    }
+    .arrow-up {
+      opacity: 1;
+    }
+
+    &.collapsed {
+      .arrow-down {
+        opacity: 1;
+      }
+
+      .arrow-up {
+        opacity: 0;
+      }
+    }
+  }
+
+  .product-card {
+    img {
+      height: 1.5rem;
+    }
+  }
+}
